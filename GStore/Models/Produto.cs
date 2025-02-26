@@ -25,7 +25,7 @@ namespace GStore.Models;
 
         [Required]
         [Range(0, int.MaxValue)]
-        public int Qtde { get; set; } = 0;
+        public int QtdeEstoque { get; set; } = 0;
 
         [Range(0, double.MaxValue)]
         [Column(TypeName = "numeric(10,2)")]
@@ -34,4 +34,8 @@ namespace GStore.Models;
         [Range(0, double.MaxValue)]
         [Column(TypeName = "numeric(10,2)")]
         public decimal ValorVenda { get; set; }
+
+        public bool Destaque { get; set; } = false;
+
+        public List<ProdutoFoto> Fotos { get; set; }
     }
