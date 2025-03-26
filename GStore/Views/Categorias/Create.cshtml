@@ -21,13 +21,13 @@
                     </div>
                     <div class="mb-3">
                         <label asp-for="Foto" class="from-label"></label>
-                        <input type="file" id="Arquivo" name="Arquivo" accept=".jpg,.jpeg,.png,.gif" class="form-control p-2 border-2 rounded-2" />
+                        <input type="file" id="Arquivo" name="Arquivo" class="form-control p-2 border-dark border-2 rounded-1" />
                         <span asp-validation-for="Foto" class="text-danger"></span>
                     </div>
                 </div>
                 <div class="col-md-4 col-lg-2">
                     <label for="Preview" class="=from-label">Prévia</label>
-                    <img src="" id="Preview" class="img-fluid p-2">
+                    <img id="Preview" src="" class="img-fluid p-2 border-dark border-2 rounded-1">
                 </div>
             </div>
 
@@ -44,12 +44,12 @@
 </div>
 
 @section Scripts {
-    <partial name="_ValidationScriptsPartial"></partial>
+    <partial name="_ValidationScriptsPartial.cshtml"></partial>
     <script>
-        document.querySelector('input[type="file"]') .addEventListener('change', function () {
+        document.querySelector("input[type='file']") .addEventListener('change', function () {
             if (this.files && this.files[0]) {
-                var img = document.getElementById('Preview');
-                img.src = URL.createObjectURL(this.files[0])
+                var img = document.getElementById("Preview");
+                img.src = URL.createObjectURL(this.files[0]);
             }
         });
     </script>
