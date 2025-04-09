@@ -1,0 +1,8 @@
+@using Microsoft.AspNetCore.Identity
+@inject GStore.Data.AppDbContext _db
+@inject SignInManager<Usuario> SignInManager
+@inject UserManager<Usuario> UserManager
+@{
+    var user = UserManager.GetUserName(User);
+    var usuario = _db.Usuarios.FirstOrDefault(u => u.UserName == user);
+}
