@@ -15,10 +15,12 @@ builder.Services.AddDbContext<AppDbContext>(
 );
 
 // Configuração do Identity
-builder.Services.AddIdentity<Usuario, IdentityRole>(
-    options => options.SignIn.RequireConfirmedEmail = false
-).AddEntityFrameworkStores<AppDbContext>()
+builder.Services.AddIdentity<Usuario, IdentityRole>( 
+    options => { options.SignIn.RequireConfirmedEmail = false;
+    options.User.RequireUniqueEmail= true;
+}).AddEntityFrameworkStores<AppDbContext>()
 .AddDefaultTokenProviders();
+
 
 var app = builder.Build();
 
@@ -48,6 +50,5 @@ app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}")
     .WithStaticAssets();
-
 
 app.Run();

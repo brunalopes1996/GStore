@@ -90,6 +90,13 @@ public class AccountController : Controller
         await _signInManager.SignOutAsync();
         return RedirectToAction("Index", "Home");
     }
+
+    [HttpGet]
+    public IActionResult Registro()
+    {
+        RegistroVM register = new();
+        return View(register);
+    }
     
     [HttpPost]
     [ValidateAntiForgeryToken]
@@ -139,6 +146,8 @@ public class AccountController : Controller
     {
         return View();
     }
+
+
 
     public bool IsValidEmail(string email)
     {

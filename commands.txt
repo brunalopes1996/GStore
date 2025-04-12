@@ -43,3 +43,5 @@ dotnet aspnet-codegenerator controller -name ProdutosController --model Produto 
 
 
 Comando que formata o código  - Alt + Shift + f
+
+Abrir o terminal - Ctrl + '

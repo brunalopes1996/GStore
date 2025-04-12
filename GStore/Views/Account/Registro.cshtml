@@ -1,5 +1,4 @@
 @model GStore.ViewModels.RegistroVM
-
 @{
     ViewData["Title"] = "Registro";
     Layout = "~/Views/Shared/_LayoutAccount.cshtml";
@@ -29,7 +28,7 @@
                                 <span asp-validation-for="Email" class="text-danger text-sm"></span>
                             </div>
                             <div class="form-floating mb-3">
-                                <input class="form-check-input" asp-for="DataNascimento" />
+                                <input class="form-control" asp-for="DataNascimento" />
                                 <label asp-for="DataNascimento"></label>
                                 <span asp-validation-for="DataNascimento" class="text-danger text-sm"></span>
                             </div>
